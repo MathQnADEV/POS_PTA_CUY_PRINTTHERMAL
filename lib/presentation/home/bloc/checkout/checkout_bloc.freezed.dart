@@ -21,6 +21,7 @@ mixin _$CheckoutEvent {
     required TResult Function() started,
     required TResult Function(Product product) addCheckout,
     required TResult Function(Product product) removeCheckout,
+    required TResult Function(Product product) removeCheckoutCard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +29,7 @@ mixin _$CheckoutEvent {
     TResult? Function()? started,
     TResult? Function(Product product)? addCheckout,
     TResult? Function(Product product)? removeCheckout,
+    TResult? Function(Product product)? removeCheckoutCard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +37,7 @@ mixin _$CheckoutEvent {
     TResult Function()? started,
     TResult Function(Product product)? addCheckout,
     TResult Function(Product product)? removeCheckout,
+    TResult Function(Product product)? removeCheckoutCard,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +46,7 @@ mixin _$CheckoutEvent {
     required TResult Function(_Started value) started,
     required TResult Function(_AddCheckout value) addCheckout,
     required TResult Function(_RemoveCheckout value) removeCheckout,
+    required TResult Function(_RemoveCheckoutCard value) removeCheckoutCard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +54,7 @@ mixin _$CheckoutEvent {
     TResult? Function(_Started value)? started,
     TResult? Function(_AddCheckout value)? addCheckout,
     TResult? Function(_RemoveCheckout value)? removeCheckout,
+    TResult? Function(_RemoveCheckoutCard value)? removeCheckoutCard,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +62,7 @@ mixin _$CheckoutEvent {
     TResult Function(_Started value)? started,
     TResult Function(_AddCheckout value)? addCheckout,
     TResult Function(_RemoveCheckout value)? removeCheckout,
+    TResult Function(_RemoveCheckoutCard value)? removeCheckoutCard,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +127,7 @@ class _$StartedImpl implements _Started {
     required TResult Function() started,
     required TResult Function(Product product) addCheckout,
     required TResult Function(Product product) removeCheckout,
+    required TResult Function(Product product) removeCheckoutCard,
   }) {
     return started();
   }
@@ -131,6 +138,7 @@ class _$StartedImpl implements _Started {
     TResult? Function()? started,
     TResult? Function(Product product)? addCheckout,
     TResult? Function(Product product)? removeCheckout,
+    TResult? Function(Product product)? removeCheckoutCard,
   }) {
     return started?.call();
   }
@@ -141,6 +149,7 @@ class _$StartedImpl implements _Started {
     TResult Function()? started,
     TResult Function(Product product)? addCheckout,
     TResult Function(Product product)? removeCheckout,
+    TResult Function(Product product)? removeCheckoutCard,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -155,6 +164,7 @@ class _$StartedImpl implements _Started {
     required TResult Function(_Started value) started,
     required TResult Function(_AddCheckout value) addCheckout,
     required TResult Function(_RemoveCheckout value) removeCheckout,
+    required TResult Function(_RemoveCheckoutCard value) removeCheckoutCard,
   }) {
     return started(this);
   }
@@ -165,6 +175,7 @@ class _$StartedImpl implements _Started {
     TResult? Function(_Started value)? started,
     TResult? Function(_AddCheckout value)? addCheckout,
     TResult? Function(_RemoveCheckout value)? removeCheckout,
+    TResult? Function(_RemoveCheckoutCard value)? removeCheckoutCard,
   }) {
     return started?.call(this);
   }
@@ -175,6 +186,7 @@ class _$StartedImpl implements _Started {
     TResult Function(_Started value)? started,
     TResult Function(_AddCheckout value)? addCheckout,
     TResult Function(_RemoveCheckout value)? removeCheckout,
+    TResult Function(_RemoveCheckoutCard value)? removeCheckoutCard,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -255,6 +267,7 @@ class _$AddCheckoutImpl implements _AddCheckout {
     required TResult Function() started,
     required TResult Function(Product product) addCheckout,
     required TResult Function(Product product) removeCheckout,
+    required TResult Function(Product product) removeCheckoutCard,
   }) {
     return addCheckout(product);
   }
@@ -265,6 +278,7 @@ class _$AddCheckoutImpl implements _AddCheckout {
     TResult? Function()? started,
     TResult? Function(Product product)? addCheckout,
     TResult? Function(Product product)? removeCheckout,
+    TResult? Function(Product product)? removeCheckoutCard,
   }) {
     return addCheckout?.call(product);
   }
@@ -275,6 +289,7 @@ class _$AddCheckoutImpl implements _AddCheckout {
     TResult Function()? started,
     TResult Function(Product product)? addCheckout,
     TResult Function(Product product)? removeCheckout,
+    TResult Function(Product product)? removeCheckoutCard,
     required TResult orElse(),
   }) {
     if (addCheckout != null) {
@@ -289,6 +304,7 @@ class _$AddCheckoutImpl implements _AddCheckout {
     required TResult Function(_Started value) started,
     required TResult Function(_AddCheckout value) addCheckout,
     required TResult Function(_RemoveCheckout value) removeCheckout,
+    required TResult Function(_RemoveCheckoutCard value) removeCheckoutCard,
   }) {
     return addCheckout(this);
   }
@@ -299,6 +315,7 @@ class _$AddCheckoutImpl implements _AddCheckout {
     TResult? Function(_Started value)? started,
     TResult? Function(_AddCheckout value)? addCheckout,
     TResult? Function(_RemoveCheckout value)? removeCheckout,
+    TResult? Function(_RemoveCheckoutCard value)? removeCheckoutCard,
   }) {
     return addCheckout?.call(this);
   }
@@ -309,6 +326,7 @@ class _$AddCheckoutImpl implements _AddCheckout {
     TResult Function(_Started value)? started,
     TResult Function(_AddCheckout value)? addCheckout,
     TResult Function(_RemoveCheckout value)? removeCheckout,
+    TResult Function(_RemoveCheckoutCard value)? removeCheckoutCard,
     required TResult orElse(),
   }) {
     if (addCheckout != null) {
@@ -395,6 +413,7 @@ class _$RemoveCheckoutImpl implements _RemoveCheckout {
     required TResult Function() started,
     required TResult Function(Product product) addCheckout,
     required TResult Function(Product product) removeCheckout,
+    required TResult Function(Product product) removeCheckoutCard,
   }) {
     return removeCheckout(product);
   }
@@ -405,6 +424,7 @@ class _$RemoveCheckoutImpl implements _RemoveCheckout {
     TResult? Function()? started,
     TResult? Function(Product product)? addCheckout,
     TResult? Function(Product product)? removeCheckout,
+    TResult? Function(Product product)? removeCheckoutCard,
   }) {
     return removeCheckout?.call(product);
   }
@@ -415,6 +435,7 @@ class _$RemoveCheckoutImpl implements _RemoveCheckout {
     TResult Function()? started,
     TResult Function(Product product)? addCheckout,
     TResult Function(Product product)? removeCheckout,
+    TResult Function(Product product)? removeCheckoutCard,
     required TResult orElse(),
   }) {
     if (removeCheckout != null) {
@@ -429,6 +450,7 @@ class _$RemoveCheckoutImpl implements _RemoveCheckout {
     required TResult Function(_Started value) started,
     required TResult Function(_AddCheckout value) addCheckout,
     required TResult Function(_RemoveCheckout value) removeCheckout,
+    required TResult Function(_RemoveCheckoutCard value) removeCheckoutCard,
   }) {
     return removeCheckout(this);
   }
@@ -439,6 +461,7 @@ class _$RemoveCheckoutImpl implements _RemoveCheckout {
     TResult? Function(_Started value)? started,
     TResult? Function(_AddCheckout value)? addCheckout,
     TResult? Function(_RemoveCheckout value)? removeCheckout,
+    TResult? Function(_RemoveCheckoutCard value)? removeCheckoutCard,
   }) {
     return removeCheckout?.call(this);
   }
@@ -449,6 +472,7 @@ class _$RemoveCheckoutImpl implements _RemoveCheckout {
     TResult Function(_Started value)? started,
     TResult Function(_AddCheckout value)? addCheckout,
     TResult Function(_RemoveCheckout value)? removeCheckout,
+    TResult Function(_RemoveCheckoutCard value)? removeCheckoutCard,
     required TResult orElse(),
   }) {
     if (removeCheckout != null) {
@@ -464,6 +488,153 @@ abstract class _RemoveCheckout implements CheckoutEvent {
   Product get product;
   @JsonKey(ignore: true)
   _$$RemoveCheckoutImplCopyWith<_$RemoveCheckoutImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$RemoveCheckoutCardImplCopyWith<$Res> {
+  factory _$$RemoveCheckoutCardImplCopyWith(_$RemoveCheckoutCardImpl value,
+          $Res Function(_$RemoveCheckoutCardImpl) then) =
+      __$$RemoveCheckoutCardImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Product product});
+}
+
+/// @nodoc
+class __$$RemoveCheckoutCardImplCopyWithImpl<$Res>
+    extends _$CheckoutEventCopyWithImpl<$Res, _$RemoveCheckoutCardImpl>
+    implements _$$RemoveCheckoutCardImplCopyWith<$Res> {
+  __$$RemoveCheckoutCardImplCopyWithImpl(_$RemoveCheckoutCardImpl _value,
+      $Res Function(_$RemoveCheckoutCardImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? product = null,
+  }) {
+    return _then(_$RemoveCheckoutCardImpl(
+      null == product
+          ? _value.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as Product,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$RemoveCheckoutCardImpl implements _RemoveCheckoutCard {
+  const _$RemoveCheckoutCardImpl(this.product);
+
+  @override
+  final Product product;
+
+  @override
+  String toString() {
+    return 'CheckoutEvent.removeCheckoutCard(product: $product)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$RemoveCheckoutCardImpl &&
+            (identical(other.product, product) || other.product == product));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, product);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$RemoveCheckoutCardImplCopyWith<_$RemoveCheckoutCardImpl> get copyWith =>
+      __$$RemoveCheckoutCardImplCopyWithImpl<_$RemoveCheckoutCardImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(Product product) addCheckout,
+    required TResult Function(Product product) removeCheckout,
+    required TResult Function(Product product) removeCheckoutCard,
+  }) {
+    return removeCheckoutCard(product);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(Product product)? addCheckout,
+    TResult? Function(Product product)? removeCheckout,
+    TResult? Function(Product product)? removeCheckoutCard,
+  }) {
+    return removeCheckoutCard?.call(product);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Product product)? addCheckout,
+    TResult Function(Product product)? removeCheckout,
+    TResult Function(Product product)? removeCheckoutCard,
+    required TResult orElse(),
+  }) {
+    if (removeCheckoutCard != null) {
+      return removeCheckoutCard(product);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_AddCheckout value) addCheckout,
+    required TResult Function(_RemoveCheckout value) removeCheckout,
+    required TResult Function(_RemoveCheckoutCard value) removeCheckoutCard,
+  }) {
+    return removeCheckoutCard(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(_AddCheckout value)? addCheckout,
+    TResult? Function(_RemoveCheckout value)? removeCheckout,
+    TResult? Function(_RemoveCheckoutCard value)? removeCheckoutCard,
+  }) {
+    return removeCheckoutCard?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_AddCheckout value)? addCheckout,
+    TResult Function(_RemoveCheckout value)? removeCheckout,
+    TResult Function(_RemoveCheckoutCard value)? removeCheckoutCard,
+    required TResult orElse(),
+  }) {
+    if (removeCheckoutCard != null) {
+      return removeCheckoutCard(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _RemoveCheckoutCard implements CheckoutEvent {
+  const factory _RemoveCheckoutCard(final Product product) =
+      _$RemoveCheckoutCardImpl;
+
+  Product get product;
+  @JsonKey(ignore: true)
+  _$$RemoveCheckoutCardImplCopyWith<_$RemoveCheckoutCardImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

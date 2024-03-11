@@ -43,10 +43,31 @@ class CheckoutBloc extends Bloc<CheckoutEvent, CheckoutState> {
           newCheckout[index].quantity--;
         } else {
           newCheckout.removeAt(index);
+          // newCheckout.removeAt(index);
         }
       }
 
       // int totalQuantity = newCheckout.fold(0, (previousValue, element) => previousValue + element.quantity);
+      int totalQuantity = 0;
+      int totalPrice = 0;
+      for (var element in newCheckout) {
+        totalQuantity += element.quantity;
+        totalPrice += element.quantity * element.product.price;
+      }
+
+      emit(_Success(newCheckout, totalQuantity, totalPrice));
+    });
+
+    on<_RemoveCheckoutCard>((event, emit) {
+      var currentStates = state as _Success;
+      List<OrderItem> newCheckout = [...currentStates.products];
+      emit(const _Loading());
+      if (newCheckout.any((element) => element.product == event.product)) {
+        var index = newCheckout
+            .indexWhere((element) => element.product == event.product);
+        newCheckout.removeAt(index);
+        // newCheckout.removeAt(index);
+      }
       int totalQuantity = 0;
       int totalPrice = 0;
       for (var element in newCheckout) {
