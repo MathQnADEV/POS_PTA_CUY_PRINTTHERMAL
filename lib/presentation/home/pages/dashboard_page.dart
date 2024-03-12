@@ -4,6 +4,7 @@ import 'package:flutter_pos_app/core/assets/assets.gen.dart';
 import 'package:flutter_pos_app/core/constants/colors.dart';
 import 'package:flutter_pos_app/data/datasources/auth_local_datasource.dart';
 import 'package:flutter_pos_app/presentation/auth/pages/login_page.dart';
+import 'package:flutter_pos_app/presentation/history/pages/history_page.dart';
 import 'package:flutter_pos_app/presentation/home/bloc/logout/logout_bloc.dart';
 import 'package:flutter_pos_app/presentation/home/pages/home_page.dart';
 import 'package:flutter_pos_app/presentation/home/widgets/nav_item.dart';
@@ -23,9 +24,7 @@ class _DashboardPageState extends State<DashboardPage> {
   final List<Widget> _pages = [
     const HomePage(),
     const OrderPage(),
-    const Center(
-      child: Text('History'),
-    ),
+    const HistoryPage(),
     const SettingPage(),
     // const HomePage(),
     // const OrdersPage(),

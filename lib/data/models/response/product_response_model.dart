@@ -1,7 +1,7 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
+import 'package:meta/meta.dart';
 
 class ProductResponseModel {
   final bool success;
@@ -35,6 +35,7 @@ class ProductResponseModel {
 
 class Product {
   final int? id;
+  final int? productId;
   final String name;
   final String? description;
   final int price;
@@ -47,6 +48,7 @@ class Product {
 
   Product({
     this.id,
+    this.productId,
     required this.name,
     this.description,
     required this.price,
@@ -64,6 +66,7 @@ class Product {
 
   factory Product.fromMap(Map<String, dynamic> json) => Product(
         id: json["id"],
+        productId: json["product_id"],
         name: json["name"],
         description: json["description"] ?? '',
         price: json["price"],
@@ -71,6 +74,7 @@ class Product {
         category: json["category"],
         image: json["image"] ?? '',
         isBestSeller: json["is_best_seller"] == 1 ? true : false,
+
         // createdAt: DateTime.parse(json["created_at"]),
         // updatedAt: DateTime.parse(json["updated_at"]),
       );
@@ -82,10 +86,21 @@ class Product {
         "category": category,
         "image": image,
         "is_best_seller": isBestSeller ? 1 : 0,
+        "product_id": productId,
+      };
+  Map<String, dynamic> toLocalMap() => {
+        "name": name,
+        "price": price,
+        "stock": stock,
+        "category": category,
+        "image": image,
+        "is_best_seller": isBestSeller ? 1 : 0,
+        "product_id": id,
       };
 
   Product copyWith({
     int? id,
+    int? productId,
     String? name,
     String? description,
     int? price,
@@ -98,6 +113,7 @@ class Product {
   }) {
     return Product(
       id: id ?? this.id,
+      productId: productId ?? this.productId,
       name: name ?? this.name,
       description: description ?? this.description,
       price: price ?? this.price,
@@ -111,33 +127,33 @@ class Product {
   }
 
   @override
-  bool operator ==(covariant Product other) {
+  bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
-    return 
-      other.id == id &&
-      other.name == name &&
-      other.description == description &&
-      other.price == price &&
-      other.stock == stock &&
-      other.category == category &&
-      other.image == image &&
-      other.isBestSeller == isBestSeller &&
-      other.createdAt == createdAt &&
-      other.updatedAt == updatedAt;
+
+    return other is Product &&
+        other.id == id &&
+        other.name == name &&
+        other.description == description &&
+        other.price == price &&
+        other.stock == stock &&
+        other.category == category &&
+        other.image == image &&
+        other.isBestSeller == isBestSeller &&
+        other.createdAt == createdAt &&
+        other.updatedAt == updatedAt;
   }
 
   @override
   int get hashCode {
     return id.hashCode ^
-      name.hashCode ^
-      description.hashCode ^
-      price.hashCode ^
-      stock.hashCode ^
-      category.hashCode ^
-      image.hashCode ^
-      isBestSeller.hashCode ^
-      createdAt.hashCode ^
-      updatedAt.hashCode;
+        name.hashCode ^
+        description.hashCode ^
+        price.hashCode ^
+        stock.hashCode ^
+        category.hashCode ^
+        image.hashCode ^
+        isBestSeller.hashCode ^
+        createdAt.hashCode ^
+        updatedAt.hashCode;
   }
 }

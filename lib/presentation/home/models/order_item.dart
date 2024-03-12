@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_pos_app/data/models/request/order_request_model.dart';
 import 'package:flutter_pos_app/data/models/response/product_response_model.dart';
 
 class OrderItem {
@@ -26,10 +27,18 @@ class OrderItem {
   Map<String, dynamic> toMapForLocal(int orderId) {
     return {
       'id_order': orderId,
-      'id_product': product.id,
+      'id_product': product.productId,
       'quantity': quantity,
       'price': product.price,
     };
+  }
+
+  static OrderItemModel fromMapLocal(Map<String, dynamic> map) {
+    return OrderItemModel(
+      productId: map['id_product']?.toInt() ?? 0,
+      quantity: map['quantity']?.toInt() ?? 0,
+      totalPrice: map['price']?.toInt() ?? 0 * (map['quantity']?.toInt() ?? 0),
+    );
   }
 
   factory OrderItem.fromMap(Map<String, dynamic> map) {

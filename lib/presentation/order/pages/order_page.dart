@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_pos_app/presentation/home/bloc/checkout/checkout_bloc.dart';
 import 'package:flutter_pos_app/presentation/home/models/order_item.dart';
-import 'package:flutter_pos_app/presentation/order/bloc/bloc/order_bloc.dart';
+import 'package:flutter_pos_app/presentation/order/bloc/order/order_bloc.dart';
 import 'package:flutter_pos_app/presentation/order/widgets/payment_qris_dialog.dart';
 
 import '../../../core/assets/assets.gen.dart';
@@ -162,7 +162,7 @@ class _OrderPageState extends State<OrderPage> {
                   showDialog(
                     context: context,
                     barrierDismissible: false,
-                    builder: (context) => const PaymentQrisDialog(),
+                    builder: (context) => PaymentQrisDialog(price: totalPrice,),
                   );
                 }
               },

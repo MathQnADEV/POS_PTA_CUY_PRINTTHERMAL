@@ -5,6 +5,7 @@ import 'package:flutter_pos_app/core/extensions/int_ext.dart';
 import '../../home/models/order_item.dart';
 
 class OrderModel {
+  final int? id;
   final String paymentMethod;
   final int nominalBayar;
   final List<OrderItem> orders;
@@ -12,8 +13,10 @@ class OrderModel {
   final int totalPrice;
   final int idKasir;
   final String namaKasir;
+  final String transactionTime;
   final bool isSync;
   OrderModel({
+    this.id,
     required this.paymentMethod,
     required this.nominalBayar,
     required this.orders,
@@ -22,6 +25,7 @@ class OrderModel {
     required this.idKasir,
     required this.namaKasir,
     required this.isSync,
+    required this.transactionTime,
   });
 
   Map<String, dynamic> toMap() {
@@ -52,6 +56,7 @@ class OrderModel {
       'id_kasir': idKasir,
       'nama_kasir': namaKasir,
       'is_sync': isSync ? 1 : 0,
+      'transaction_time': transactionTime,
     };
   }
 
@@ -65,6 +70,8 @@ class OrderModel {
       idKasir: map['id_kasir']?.toInt() ?? 0,
       isSync: map['is_sync'] == 1 ? true : false,
       namaKasir: map['nama_kasir'] ?? '',
+      id: map['id']?.toInt() ?? 0,
+      transactionTime: map['transaction_time'] ?? '',
     );
   }
 
@@ -79,6 +86,8 @@ class OrderModel {
       idKasir: map['idKasir']?.toInt() ?? 0,
       isSync: map['isSync'] ?? false,
       namaKasir: map['namaKasir'] ?? '',
+      id: map['id']?.toInt() ?? 0,
+      transactionTime: map['transactionTime'] ?? '',
     );
   }
 
